@@ -5,6 +5,12 @@ Inclusive TypeScript definition file (types).
 
 UUID RFC 4122 Version 4
 
+## Install
+
+```bash
+npm i -S uuid-tool
+```
+
 ## Example
 
 ```js
