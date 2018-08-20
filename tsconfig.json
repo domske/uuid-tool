@@ -5,7 +5,7 @@
     "declaration": true,
     "sourceMap": true,
     "lib": ["es2015", "dom"],
-    "outDir": "dist",
+    "outDir": "types",
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/_tests_/*"]
