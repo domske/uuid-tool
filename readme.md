@@ -64,7 +64,7 @@ Generates a new (pseudo) UUID RFC 4122 Version 4.
 
 ---
 
-### **isUUID** (bytes)
+### **isUUID** (uuid)
 
 Converts an UUID byte array to an UUID string.
 
