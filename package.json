@@ -1,13 +1,15 @@
 {
   "name": "uuid-tool",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.",
   "keywords": [
     "uuid",
     "parse",
     "generate",
     "byte",
-    "array"
+    "array",
+    "node",
+    "browser"
   ],
   "author": "Dominik-Andreas Geng",
   "license": "Apache-2.0",

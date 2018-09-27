@@ -8,7 +8,6 @@
 import { UUID } from './uuid';
 
 export class UUIDTool {
-
   /**
    * Converts an UUID string to an UUID byte array.
    * @param uuid UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124'
@@ -43,5 +42,4 @@ export class UUIDTool {
   public static isUUID(uuid: string): boolean {
     return new UUID().fromString(uuid).isValid();
   }
-
 }

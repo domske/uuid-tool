@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "moduleResolution": "node",
+    "module": "esnext",
     "declaration": true,
     "sourceMap": true,
-    "lib": ["es2015", "dom"],
+    "lib": ["es2018", "dom"],
     "outDir": "types",
+    "strict": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/_tests_/*"]
+  "exclude": [
+    "node_modules",
+    "**/_tests_/*",
+    "dist"
+  ]
 }

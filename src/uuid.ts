@@ -6,12 +6,11 @@
  */
 
 export class UUID {
-
   private static REGEX = {
-    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
   };
 
-  private value: string;
+  private value = '';
 
   /**
    * UUID
@@ -32,9 +31,9 @@ export class UUID {
    */
   public generate(): this {
     // Generate pseudo uuid by random bytes.
-    const bytes = new Array(16).fill(0).map(() => (Math.random() * 0xFF) & 0xFF);
+    const bytes = new Array(16).fill(0).map(() => (Math.random() * 0xff) & 0xff);
     // Brand version.
-    bytes[6] = (bytes[6] | 0x40) & 0x4F;
+    bytes[6] = (bytes[6] | 0x40) & 0x4f;
     // Parse it as string.
     this.fromBytes(bytes);
 
@@ -60,10 +59,7 @@ export class UUID {
    * @return UUID byte array. (length: 16)
    */
   public toBytes(): number[] {
-    return this.value
-      .replace(/-/g, '')
-      .match(/.{2}/g)
-      .map(b => parseInt(b, 16));
+    return (this.value.replace(/-/g, '').match(/.{2}/g) || []).map(b => parseInt(b, 16));
   }
 
   /**
@@ -89,10 +85,9 @@ export class UUID {
    * @return True if valid, otherwise false.
    */
   public isValid(): boolean {
-    if ((typeof this.value !== 'string') || this.value.length !== 36) {
+    if (typeof this.value !== 'string' || this.value.length !== 36) {
       return false;
     }
     return UUID.REGEX.UUID.test(this.value);
   }
-
 }

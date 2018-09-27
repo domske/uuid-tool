@@ -3,12 +3,14 @@
 Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.
 Inclusive TypeScript definition file (types).
 
+For NodeJS and Browser.
+
 UUID RFC 4122 Version 4
 
 ## Install
 
 ```bash
-npm i -S uuid-tool
+npm i uuid-tool
 ```
 
 ## Example
@@ -26,6 +28,13 @@ You can also use the `UUID` class.
 let uuid = new UUID(byteOrString);
 let str = uuid.toString();
 let bytes = uuid.toBytes();
+```
+
+In NodeJS e.g.
+
+```js
+const UUID = require('uuid-tool').UUID;
+console.log(new UUID().toString());
 ```
 
 ## API
