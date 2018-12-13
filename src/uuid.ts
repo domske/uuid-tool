@@ -6,6 +6,8 @@
  */
 
 export class UUID {
+  public static stringExportFormat = 'uppercase';
+
   private static REGEX = {
     UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
   };
@@ -68,7 +70,6 @@ export class UUID {
    */
   public fromString(uuid: string): this {
     this.value = uuid;
-
     return this;
   }
 
@@ -77,7 +78,14 @@ export class UUID {
    * @return UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124'
    */
   public toString(): string {
-    return this.value;
+    switch (UUID.stringExportFormat) {
+      default:
+      case 'uppercase':
+        return this.value.toUpperCase();
+
+      case 'lowercase':
+        return this.value.toLowerCase();
+    }
   }
 
   /**
@@ -89,5 +97,14 @@ export class UUID {
       return false;
     }
     return UUID.REGEX.UUID.test(this.value);
+  }
+
+  /**
+   * Compares this UUID with another UUID.
+   * @param uuid Another UUID.
+   * @return True if equal, otherwise false.
+   */
+  public equals(uuid: UUID): boolean {
+    return this.toString() === uuid.toString();
   }
 }

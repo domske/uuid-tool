@@ -30,6 +30,25 @@ let str = uuid.toString();
 let bytes = uuid.toBytes();
 ```
 
+```js
+// Generate a new UUID
+let uuid = new UUID();
+```
+
+```js
+// Compare (case insensitive)
+let uuid1 = new UUID('3C09B262-49C7-466F-8B4F-626BCA1EC9BC');
+let uuid2 = new UUID('3c09b262-49c7-466f-8b4f-626bca1ec9bc');
+
+if (uuid1.equals(uuid2)) {
+  console.log('The IDs match.');
+} else {
+  console.log('The IDs do not match.');
+}
+
+// Result: The IDs match.
+```
+
 In NodeJS e.g.
 
 ```js
@@ -38,6 +57,8 @@ console.log(new UUID().toString());
 ```
 
 ## API
+
+## UUIDTool
 
 ---
 
@@ -83,6 +104,91 @@ Converts an UUID byte array to an UUID string.
 
 **Returns** `boolean` True if valid, otherwise false.
 
+---
+
+### **compare** (uuid1, uuid2)
+
+Compares two UUIDs.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uuid1 | string | UUID string |
+| uuid2 | string | UUID string |
+
+**Returns** `boolean` True if equal, otherwise false.
+
+---
+
+## UUID
+
+### **generate** ()
+
+Re-generates a new UUID for this instance.
+
+**Returns** `this` The same UUID instance.
+
+---
+
+### **fromBytes** (bytes)
+
+Converts an UUID byte array to an UUID string. (length: 36)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| bytes | number[] | UUID Byte array (length 16 bytes of bytes) |
+
+**Returns** `this` The same UUID instance.
+
+---
+
+### **toBytes** ()
+
+Converts this UUID to an UUID byte array. (length: 16)
+
+**Returns** `number[]` The UUID as byte array.
+
+---
+
+### **fromString** (uuid)
+
+Converts an UUID byte array to an UUID string. (length: 36)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uuid | string | string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
+
+**Returns** `this` The same UUID instance.
+
+---
+
+### **toString** ()
+
+To UUID string.
+HINT Set case mode by UUID.stringExportFormat = 'uppercase' | 'lowercase';
+
+**Returns** `string` UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124'
+
+---
+
+### **isValid** ()
+
+Validate this UUID.
+
+**Returns** `boolean` True if valid, otherwise false.
+
+---
+
+### **equals** (uuid)
+
+Compares this UUID with another UUID.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uuid | UUID | Another UUID instance. |
+
+**Returns** `boolean` True if equal, otherwise false.
+
+---
 
 ## License
 

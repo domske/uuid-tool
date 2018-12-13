@@ -42,4 +42,14 @@ export class UUIDTool {
   public static isUUID(uuid: string): boolean {
     return new UUID().fromString(uuid).isValid();
   }
+
+  /**
+   * Compares two UUIDs.
+   * @param uuid1 UUID string.
+   * @param uuid2 UUID string.
+   * @return True if equal, otherwise false.
+   */
+  public static compare(uuid1: string, uuid2: string): boolean {
+    return new UUID(uuid1).equals(new UUID(uuid2));
+  }
 }
