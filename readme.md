@@ -20,6 +20,7 @@ let uuid = UUIDTool.newUUID();
 let bytes = UUIDTool.toBytes(uuid);
 let strAgain = UUIDTool.toString(bytes);
 let isValid = UUIDTool.isUUID(strAgain);
+let isEqual = UUIDTool.compare(uuid1, uuid2);
 ```
 
 You can also use the `UUID` class.
