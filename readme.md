@@ -1,5 +1,8 @@
 # UUID Tool
 
+Lightweight UUID library for JavaScript.
+No bullshit, simple to use, easy to learn.
+
 Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.
 Inclusive TypeScript definition file (types).
 

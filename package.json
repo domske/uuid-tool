@@ -1,11 +1,12 @@
 {
   "name": "uuid-tool",
   "version": "1.3.0",
-  "description": "Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.",
+  "description": "Lightweight UUID for JavaScript. Parse and generate UUIDs. Convert between string and byte array.",
   "keywords": [
     "uuid",
     "parse",
     "generate",
+    "compare",
     "byte",
     "array",
     "node",
