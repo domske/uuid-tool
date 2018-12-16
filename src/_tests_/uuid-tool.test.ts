@@ -2,14 +2,14 @@ import { UUIDTool } from '../uuid-tool';
 import { UUID } from '../uuid';
 
 const REGEX = {
-  UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
+  UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 };
 
 test('parse', () => {
   const uuid = '1FBD384C-B2A1-41C6-84AF-43CABDF44124';
   const bytes = UUIDTool.toBytes(uuid);
   expect(bytes.toString()).toBe(
-    [0x1f, 0xbd, 0x38, 0x4c, 0xb2, 0xa1, 0x41, 0xc6, 0x84, 0xaf, 0x43, 0xca, 0xbd, 0xf4, 0x41, 0x24].toString(),
+    [0x1f, 0xbd, 0x38, 0x4c, 0xb2, 0xa1, 0x41, 0xc6, 0x84, 0xaf, 0x43, 0xca, 0xbd, 0xf4, 0x41, 0x24].toString()
   );
 });
 
@@ -34,6 +34,12 @@ test('equals', () => {
   let uuid1 = '3C09B262-49C7-466F-8B4F-626BCA1EC9BC';
   let uuid2 = '3c09b262-49c7-466f-8b4f-626bca1ec9bc';
   expect(UUIDTool.compare(uuid1, uuid2)).toBe(true);
+});
+
+test('not equals', () => {
+  let uuid1 = '3C09B262-49C7-466F-8B4F-626BCA1EC9BC';
+  let uuid2 = '3c09b262-49A7-466f-8b4f-626bca1ec9bc';
+  expect(UUIDTool.compare(uuid1, uuid2)).toBe(false);
 });
 
 test('string format lowercase', () => {

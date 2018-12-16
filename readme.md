@@ -74,7 +74,7 @@ Converts an UUID string to an UUID byte array.
 | --- | --- | --- |
 | uuid | string | UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
 
-**Returns** `number` UUID byte array (length: 16)
+**Returns** `number[]` UUID byte array (length: 16)
 
 ---
 

@@ -9,7 +9,7 @@ export class UUID {
   public static stringExportFormat = 'uppercase';
 
   private static REGEX = {
-    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
+    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
   };
 
   private value = '';
@@ -19,9 +19,9 @@ export class UUID {
    * @param uuid Optional UUID as string or byte array. Otherwise generates a new UUID.
    */
   constructor(uuid?: string | number[]) {
-    if (typeof uuid === 'string' && uuid.length === 36) {
+    if (typeof uuid === 'string') {
       this.fromString(uuid);
-    } else if (typeof uuid === 'object' && uuid.length === 16) {
+    } else if (Array.isArray(uuid)) {
       this.fromBytes(uuid);
     } else {
       this.generate();
@@ -69,7 +69,7 @@ export class UUID {
    * @param uuid UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124'
    */
   public fromString(uuid: string): this {
-    this.value = uuid;
+    this.value = uuid.trim();
     return this;
   }
 
