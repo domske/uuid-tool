@@ -101,10 +101,14 @@ export class UUID {
 
   /**
    * Compares this UUID with another UUID.
-   * @param uuid Another UUID.
+   * @param uuid Another UUID or uuid-string.
    * @return True if equal, otherwise false.
    */
-  public equals(uuid: UUID): boolean {
+  public equals(uuid: UUID | string): boolean {
+    if (typeof uuid === 'string') {
+      uuid = new UUID(uuid);
+    }
+
     return this.toString() === uuid.toString();
   }
 }

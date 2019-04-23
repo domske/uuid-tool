@@ -16,6 +16,8 @@ UUID RFC 4122 Version 4
 npm i uuid-tool
 ```
 
+[NPM Package](https://www.npmjs.com/package/uuid-tool)
+
 ## Example
 
 ```js
@@ -70,9 +72,9 @@ console.log(new UUID().toString());
 
 Converts an UUID string to an UUID byte array.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| uuid | string | UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
+| Param | Type   | Description                                             |
+| ----- | ------ | ------------------------------------------------------- |
+| uuid  | string | UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
 
 **Returns** `number[]` UUID byte array (length: 16)
 
@@ -82,8 +84,8 @@ Converts an UUID string to an UUID byte array.
 
 Converts an UUID byte array to an UUID string.
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type     | Description                                |
+| ----- | -------- | ------------------------------------------ |
 | bytes | number[] | UUID Byte array (length 16 bytes of bytes) |
 
 **Returns** `string` UUID string. (length 36)
@@ -102,9 +104,9 @@ Generates a new (pseudo) UUID RFC 4122 Version 4.
 
 Converts an UUID byte array to an UUID string.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| uuid | string | UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
+| Param | Type   | Description                                             |
+| ----- | ------ | ------------------------------------------------------- |
+| uuid  | string | UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
 
 **Returns** `boolean` True if valid, otherwise false.
 
@@ -114,8 +116,8 @@ Converts an UUID byte array to an UUID string.
 
 Compares two UUIDs.
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type   | Description |
+| ----- | ------ | ----------- |
 | uuid1 | string | UUID string |
 | uuid2 | string | UUID string |
 
@@ -137,8 +139,8 @@ Re-generates a new UUID for this instance.
 
 Converts an UUID byte array to an UUID string. (length: 36)
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type     | Description                                |
+| ----- | -------- | ------------------------------------------ |
 | bytes | number[] | UUID Byte array (length 16 bytes of bytes) |
 
 **Returns** `this` The same UUID instance.
@@ -157,9 +159,9 @@ Converts this UUID to an UUID byte array. (length: 16)
 
 Converts an UUID byte array to an UUID string. (length: 36)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| uuid | string | string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
+| Param | Type   | Description                                        |
+| ----- | ------ | -------------------------------------------------- |
+| uuid  | string | string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124' |
 
 **Returns** `this` The same UUID instance.
 
@@ -186,9 +188,9 @@ Validate this UUID.
 
 Compares this UUID with another UUID.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| uuid | UUID | Another UUID instance. |
+| Param | Type           | Description                           |
+| ----- | -------------- | ------------------------------------- |
+| uuid  | UUID \| string | Another UUID instance or uuid-string. |
 
 **Returns** `boolean` True if equal, otherwise false.
 
