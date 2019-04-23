@@ -34,7 +34,7 @@ header {
   background-color: rgba(50, 50, 50, 0.5);
   color: #ffffff;
   font-size: 200%;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -42,7 +42,7 @@ footer {
   height: 50px;
   background-color: rgba(50, 50, 50, 0.5);
   color: #ffffff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 footer .container {
