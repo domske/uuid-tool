@@ -1,8 +1,8 @@
-import { UUIDTool } from '../uuid-tool';
-import { UUID } from '../uuid';
+import { UUIDTool } from './uuid-tool';
+import { UUID } from './uuid';
 
 const REGEX = {
-  UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+  UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
 };
 
 test('parse', () => {

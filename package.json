@@ -1,6 +1,6 @@
 {
   "name": "uuid-tool",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Lightweight UUID for JavaScript. Parse and generate UUIDs. Convert between string and byte array.",
   "keywords": [
     "uuid",
@@ -10,17 +10,26 @@
     "byte",
     "array",
     "node",
-    "browser"
+    "browser",
+    "guid"
   ],
-  "author": "Dominik-Andreas Geng",
-  "license": "Apache-2.0",
+  "author": {
+    "name": "Dominik-Andreas Geng",
+    "url": "https://github.com/domske/"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
-    "test": "jest --config jestconfig.json",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "eslint  ./src --ext .js,.jsx,.ts,.tsx --fix",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -33,16 +42,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "clean-webpack-plugin": "^0.1.19",
-    "jest": "^23.5.0",
-    "prettier": "^1.15.3",
-    "ts-jest": "^23.10.5",
-    "ts-loader": "^4.4.2",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.17.0",
-    "typescript": "^3.2.2",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.0.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^25.5.1",
+    "ts-loader": "^7.0.3",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }

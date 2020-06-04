@@ -1,7 +1,10 @@
 # UUID Tool
 
+[![Version][version]][package] [![MIT License][license-badge]][license]
+
 Lightweight UUID library for JavaScript.
 No bullshit, simple to use, easy to learn.
+Well tested and no dependencies.
 
 Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.
 Inclusive TypeScript definition file (types).
@@ -198,6 +201,11 @@ Compares this UUID with another UUID.
 
 ## License
 
-**Apache-2.0**
+**[MIT](LICENSE)** © Copyright 2020 Dominik-Andreas Geng ([@domske](https://github.com/domske))
 
-(C) Copyright 2018 Dominik-Andreas Geng
+<!-- badges (common) -->
+
+[license-badge]: https://img.shields.io/npm/l/uuid-tool.svg?style=flat-square
+[license]: https://opensource.org/licenses/MIT
+[version]: https://img.shields.io/npm/v/uuid-tool.svg?style=flat-square
+[package]: https://www.npmjs.com/package/uuid-tool

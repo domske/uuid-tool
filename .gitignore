@@ -42,3 +42,6 @@ Thumbs.db
 
 # awesome-typescript
 .awcache
+
+# Ignore packs.
+*.tgz

@@ -1,18 +1,23 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
     "target": "es5",
-    "moduleResolution": "node",
     "module": "esnext",
+    "moduleResolution": "node",
     "declaration": true,
-    "sourceMap": true,
-    "lib": ["es2018", "dom"],
-    "outDir": "types",
-    "strict": true
+    "sourceMap": false,
+    "strict": true,
+    "pretty": true,
+    "esModuleInterop": true
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",
-    "**/_tests_/*",
-    "dist"
+    "**/__tests__/*",
+    "dist",
+    "src/test.ts",
+    "src/**/*.spec.ts"
   ]
 }

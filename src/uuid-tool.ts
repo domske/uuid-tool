@@ -1,10 +1,3 @@
-/**
- * UUID Tool
- * @author Dominik Geng
- * @copyright 2018 Dominik Geng
- * @license Apache-2.0
- */
-
 import { UUID } from './uuid';
 
 export class UUIDTool {

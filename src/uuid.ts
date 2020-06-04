@@ -1,15 +1,8 @@
-/**
- * UUID
- * @author Dominik Geng
- * @copyright 2018 Dominik Geng
- * @license Apache-2.0
- */
-
 export class UUID {
   public static stringExportFormat = 'uppercase';
 
   private static REGEX = {
-    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+    UUID: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
   };
 
   private value = '';
@@ -48,7 +41,7 @@ export class UUID {
    */
   public fromBytes(bytes: number[]): this {
     this.value = bytes
-      .map(b => ('00' + b.toString(16)).slice(-2))
+      .map((b) => ('00' + b.toString(16)).slice(-2))
       .join('')
       .replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5')
       .toUpperCase();
@@ -61,7 +54,7 @@ export class UUID {
    * @return UUID byte array. (length: 16)
    */
   public toBytes(): number[] {
-    return (this.value.replace(/-/g, '').match(/.{2}/g) || []).map(b => parseInt(b, 16));
+    return (this.value.replace(/-/g, '').match(/.{2}/g) || []).map((b) => parseInt(b, 16));
   }
 
   /**
