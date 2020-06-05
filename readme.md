@@ -201,7 +201,7 @@ Compares this UUID with another UUID.
 
 ## License
 
-**[MIT](LICENSE)** © Copyright 2020 Dominik-Andreas Geng ([@domske](https://github.com/domske))
+**[MIT](LICENSE)** © Copyright 2018 - 2020 Dominik-Andreas Geng ([@domske](https://github.com/domske))
 
 <!-- badges (common) -->
 
