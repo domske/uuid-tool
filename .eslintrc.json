@@ -17,13 +17,41 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "no-multiple-empty-lines": ["warn", { "max": 1 }],
-    "no-restricted-globals": ["error", "event", "setInterval", "setTimeout", "name", "Node", "Selection"],
+    "no-restricted-globals": [
+      "error",
+      "event",
+      "setInterval",
+      "setTimeout",
+      "name",
+      "Node",
+      "Selection"
+    ],
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
       {
         "allowExpressions": true
       }
     ],
-    "@typescript-eslint/no-empty-function": "warn"
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "default",
+        "format": ["strictCamelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "variable",
+        "format": ["strictCamelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["StrictPascalCase"]
+      },
+      {
+        "selector": "enumMember",
+        "format": ["StrictPascalCase"]
+      }
+    ]
   }
 }

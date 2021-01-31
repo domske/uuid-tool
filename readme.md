@@ -2,15 +2,10 @@
 
 [![Version][version]][package] [![MIT License][license-badge]][license]
 
-Lightweight UUID library for JavaScript.
-No bullshit, simple to use, easy to learn.
-Well tested and no dependencies.
+Lightweight UUID library for JavaScript, written in TypeScript. (Types declarations included.)
+Simple to use, simply works. Well tested and no dependencies. For NodeJS and Browser.
 
 Parse and generate UUIDs. Convert between UUID string (36 byte) to 16 byte array.
-Inclusive TypeScript definition file (types).
-
-For NodeJS and Browser.
-
 UUID RFC 4122 Version 4
 
 ## Install
@@ -24,30 +19,30 @@ npm i uuid-tool
 ## Example
 
 ```js
-let uuid = UUIDTool.newUUID();
-let bytes = UUIDTool.toBytes(uuid);
-let strAgain = UUIDTool.toString(bytes);
-let isValid = UUIDTool.isUUID(strAgain);
-let isEqual = UUIDTool.compare(uuid1, uuid2);
+let uuid = UuidTool.newUuid();
+let bytes = UuidTool.toBytes(uuid);
+let strAgain = UuidTool.toString(bytes);
+let isValid = UuidTool.isUuid(strAgain);
+let isEqual = UuidTool.compare(uuid1, uuid2);
 ```
 
-You can also use the `UUID` class.
+You can also use the `Uuid` class.
 
 ```js
-let uuid = new UUID(byteOrString);
+let uuid = new Uuid(byteOrString);
 let str = uuid.toString();
 let bytes = uuid.toBytes();
 ```
 
 ```js
 // Generate a new UUID
-let uuid = new UUID();
+let uuid = new Uuid();
 ```
 
 ```js
 // Compare (case insensitive)
-let uuid1 = new UUID('3C09B262-49C7-466F-8B4F-626BCA1EC9BC');
-let uuid2 = new UUID('3c09b262-49c7-466f-8b4f-626bca1ec9bc');
+let uuid1 = new Uuid('3C09B262-49C7-466F-8B4F-626BCA1EC9BC');
+let uuid2 = new Uuid('3c09b262-49c7-466f-8b4f-626bca1ec9bc');
 
 if (uuid1.equals(uuid2)) {
   console.log('The IDs match.');
@@ -61,13 +56,24 @@ if (uuid1.equals(uuid2)) {
 In NodeJS e.g.
 
 ```js
-const UUID = require('uuid-tool').UUID;
-console.log(new UUID().toString());
+const Uuid = require('uuid-tool').Uuid;
+console.log(new Uuid().toString());
+```
+
+From Json:
+
+```js
+const jsonStr = '{ "id": "3c09b262-49c7-466f-8b4f-626bca1ec9bc" }';
+const uuid = Uuid.fromJson(jsonStr);
+// or as already parsed json object:
+const jsonObj = { id: '3c09b262-49c7-466f-8b4f-626bca1ec9bc' };
+const uuid = Uuid.fromJson(jsonObj);
+// otherwise it throws an error on invalid inputs.
 ```
 
 ## API
 
-## UUIDTool
+## UuidTool
 
 ---
 
@@ -95,7 +101,7 @@ Converts an UUID byte array to an UUID string.
 
 ---
 
-### **newUUID** ()
+### **newUuid** ()
 
 Generates a new (pseudo) UUID RFC 4122 Version 4.
 
@@ -103,7 +109,7 @@ Generates a new (pseudo) UUID RFC 4122 Version 4.
 
 ---
 
-### **isUUID** (uuid)
+### **isUuid** (uuid)
 
 Converts an UUID byte array to an UUID string.
 
@@ -128,7 +134,7 @@ Compares two UUIDs.
 
 ---
 
-## UUID
+## Uuid
 
 ### **generate** ()
 
@@ -141,6 +147,7 @@ Re-generates a new UUID for this instance.
 ### **fromBytes** (bytes)
 
 Converts an UUID byte array to an UUID string. (length: 36)
+Note that the internal UUID has not yet been validated. Use the method `isValid`.
 
 | Param | Type     | Description                                |
 | ----- | -------- | ------------------------------------------ |
@@ -161,6 +168,7 @@ Converts this UUID to an UUID byte array. (length: 16)
 ### **fromString** (uuid)
 
 Converts an UUID byte array to an UUID string. (length: 36)
+Note that the internal UUID has not yet been validated. Use the method `isValid`.
 
 | Param | Type   | Description                                        |
 | ----- | ------ | -------------------------------------------------- |
@@ -173,7 +181,8 @@ Converts an UUID byte array to an UUID string. (length: 36)
 ### **toString** ()
 
 To UUID string.
-HINT Set case mode by UUID.stringExportFormat = 'uppercase' | 'lowercase';
+HINT Set case mode by Uuid.stringExportFormat = 'uppercase' | 'lowercase';
+This also affects the result of JSON.stringify(...);
 
 **Returns** `string` UUID string e.g. '1FBD384C-B2A1-41C6-84AF-43CABDF44124'
 
@@ -193,17 +202,27 @@ Compares this UUID with another UUID.
 
 | Param | Type           | Description                           |
 | ----- | -------------- | ------------------------------------- |
-| uuid  | UUID \| string | Another UUID instance or uuid-string. |
+| uuid  | Uuid \| string | Another UUID instance or uuid-string. |
 
 **Returns** `boolean` True if equal, otherwise false.
 
 ---
 
+### _static_ **fromJson** (json)
+
+Converts the JSON representation of this class to this class.
+
+| Param | Type               | Description                              |
+| ----- | ------------------ | ---------------------------------------- |
+| uuid  | UuidLike \| string | The string representation of this class. |
+
+**Returns** `Uuid` The `Uuid` class with the parsed input object.
+
+---
+
 ## License
 
-**[MIT](LICENSE)** © Copyright 2018 - 2020 Dominik-Andreas Geng ([@domske](https://github.com/domske))
-
-<!-- badges (common) -->
+**[MIT](LICENSE)** © Copyright 2018 - 2021 Dominik-Andreas Geng ([@domske](https://github.com/domske))
 
 [license-badge]: https://img.shields.io/npm/l/uuid-tool.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
