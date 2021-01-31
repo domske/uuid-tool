@@ -226,6 +226,8 @@ Converts the JSON representation of this class to this class.
 
 **[MIT](LICENSE)** © Copyright 2018 - 2021 Dominik-Andreas Geng ([@domske](https://github.com/domske))
 
+UUID logo © Copyright 2021 Dominik Geng
+
 [license-badge]: https://img.shields.io/npm/l/uuid-tool.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
 [version]: https://img.shields.io/npm/v/uuid-tool.svg?style=flat-square
