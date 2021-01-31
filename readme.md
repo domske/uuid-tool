@@ -2,6 +2,8 @@
 
 [![Version][version]][package] [![MIT License][license-badge]][license]
 
+![](assets/uuid-icon.png)
+
 Lightweight UUID library for JavaScript, written in TypeScript. (Types declarations included.)
 Simple to use, simply works. Well tested and no dependencies. For NodeJS and Browser.
 
