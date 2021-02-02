@@ -7,7 +7,7 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #222222;
+  background: #282828;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,23 +33,32 @@ body {
 
 header {
   width: 100%;
-  height: 60px;
-  background-color: rgba(50, 50, 50, 0.5);
+  height: 120px;
+  background-color: #333333;
   color: #ffffff;
   font-size: 200%;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 footer {
   width: 100%;
-  height: 60px;
-  background-color: rgba(50, 50, 50, 0.5);
+  height: 40px;
+  background-color: #333333;
   color: #ffffff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 footer .container {
-  opacity: 0.67;
+  opacity: 0.5;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.logo {
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .page {
@@ -88,9 +97,13 @@ main {
 
 .uuid {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 20px;
   color: #ffffff;
   font-family: monospace;
+  background: #222222;
+  border-radius: 100px;
+  margin: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
 }
 
 .uuid.string {
@@ -109,4 +122,29 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.github,
+.npm {
+  position: absolute;
+  top: 0;
+  transform: scale(0.6);
+  transition: transform 300ms;
+}
+
+.github {
+  right: 0;
+  transform-origin: top right;
+}
+
+.npm {
+  left: 0;
+  transform-origin: top left;
+}
+
+.github:hover,
+.github:active,
+.npm:hover,
+.npm:active {
+  transform: scale(0.87);
 }

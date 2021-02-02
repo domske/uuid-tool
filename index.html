@@ -2,15 +2,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UUID</title>
+    <title>UUID Tools</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <div class="background"></div>
     <header class="flex-container">
-      <div class="container">
-        UUID Tools
+      <div class="container full-height">
+        <img
+          src="assets/uuid-logo.png"
+          class="logo full-height"
+          draggable="false"
+        />
       </div>
     </header>
     <main class="flex-container">
@@ -24,12 +28,18 @@
     <footer class="flex-container">
       <div class="container">
         <div>&copy; Copyright 2018 - 2021 Dominik Geng</div>
-        <a class="link block" href="https://github.com/domske/uuid-tool">
-          Github
-        </a>
       </div>
     </footer>
-    <script src="https://unpkg.com/uuid-tool@1.5.0/dist/index.js"></script>
+
+    <a href="https://www.npmjs.com/package/uuid-tool" class="npm">
+      <img src="assets/npm-edge.png" alt="NPM" draggable="false" />
+    </a>
+
+    <a href="https://github.com/domske/uuid-tool" class="github">
+      <img src="assets/github-edge.png" alt="GitHub" draggable="false" />
+    </a>
+
+    <script src="https://unpkg.com/uuid-tool@2.0.0/dist/index.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
