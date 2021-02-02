@@ -1,6 +1,6 @@
 {
   "name": "uuid-tool",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Lightweight UUID for JavaScript. Parse and generate UUIDs. Convert between string and byte array.",
   "keywords": [
     "uuid",

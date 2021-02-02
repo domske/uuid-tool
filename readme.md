@@ -5,7 +5,6 @@
 <h1 align="center">
 	<img width="320" src="assets/uuid-logo.png">
 </h1>
-![](assets/uuid-logo.png)
 
 Lightweight UUID library for JavaScript, written in TypeScript. (Types declarations included.)
 Simple to use, simply works. Well tested and no dependencies. For NodeJS and Browser.
