@@ -1,6 +1,6 @@
 {
   "name": "uuid-tool",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lightweight UUID for JavaScript. Parse and generate UUIDs. Convert between string and byte array.",
   "keywords": [
     "uuid",
@@ -17,6 +17,7 @@
     "name": "Dominik-Andreas Geng",
     "url": "https://github.com/domske/"
   },
+  "homepage": "https://domske.github.io/uuid-tool/",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
