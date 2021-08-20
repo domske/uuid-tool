@@ -50,7 +50,7 @@ export class Uuid {
     // Generate pseudo UUID by random bytes.
     const bytes = new Array(16)
       .fill(0)
-      .map(() => (Math.random() * 0xff) & 0xff);
+      .map(() => (Math.random() * 256) & 0xff);
     // Brand version.
     bytes[6] = (bytes[6] | 0x40) & 0x4f;
     // Parse it as string.

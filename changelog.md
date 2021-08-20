@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.3
+
+- Minor fixes to the random byte range. It uses the full range now.
+
 ## 2.0.0
 
 - Some names have been changed to _StrictPascalCase_ / _strictCamelCase_ (`UUID` > `Uuid`).

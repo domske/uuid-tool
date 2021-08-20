@@ -10,7 +10,8 @@
     "sourceMap": false,
     "strict": true,
     "pretty": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "lib": ["ES2015"]
   },
   "include": ["src/**/*.ts"],
   "exclude": [
